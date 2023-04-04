@@ -30,7 +30,6 @@
  # 2 调整了登录超时时间，5秒未能登录成功将判定为备份失败设备
  # V2.6版
  # 1 修改expect语句判断时间，登录用户名密码的超时5秒，登录成功后条件判断程序每个判断由5秒调整为1秒
- # 2 增加terminal len 0屏显失败后输入terminal page 0来适应部分设备，解决屏显无法收取完整配置问题
 ### 
 set timeout 120
 #Read username, password, and enable password from huawei.txt
@@ -113,7 +112,7 @@ foreach device $devices {
 		            }
 		        }
  		        expect -timeout 1 "]"
-			    send "display cu\r"
+			send "display cu\r"
 		        sleep 0.2
 		        expect "]"
 		        send "display version\r"
@@ -209,10 +208,10 @@ foreach device $devices {
 		            }
 		        }				
 		        expect -timeout 1 "]"
-			    send "display cu\r"
+			send "display cu\r"
 		        sleep 0.2
 		        expect "]"
-				send "display version\r"
+		        send "display version\r"
 		        sleep 0.2
 		        expect "]"
 		        send "display interface brief\r"
