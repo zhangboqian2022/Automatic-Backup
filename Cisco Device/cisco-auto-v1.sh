@@ -311,10 +311,10 @@ foreach device $devices {
 		        expect "#"
 		        send "show ip interface\r"
 		        sleep 0.2
-                expect "#"
+                        expect "#"
 		        send "show clock\r"
 		        expect "#"
-				sleep 1
+			sleep 1
 		        send "exit\r"
         }           
         timeout {
